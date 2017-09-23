@@ -1,5 +1,49 @@
 .navbar{
-    background-color: red;
     border: none;
-    margin-bottom: 0;
+    width: 100%;
+    margin: 0;
+    background-color: black;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    position: fixed;
+}
+
+.navbar a{
+    color: white;
+}
+
+.navbar a:hover{
+    background-color: black;
+    color: gray
+}
+
+#nav-menu-list{
+    position: absolute;
+    right: 0;
+}
+
+.navbar-nav li:hover{
+    background-color: black;
+    color: gray
+}
+
+.nav li:hover{
+    background-color: black;
+    color: gray
+}
+
+.jumbotron{
+    background-image: url(../pictures/blueprint.jpg);
+    background-size: 800px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+    color: white;
+    min-height: 350px;
+    text-align: center;
+}
+
+.jumbotron h1{
+    margin-top: 90px;
 }
