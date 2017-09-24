@@ -32,7 +32,7 @@ vm.educate = function(topic) {
        vm.educationContent.org2 = "Take Action Minnesota";
        vm.educationContent.org2website = "http://www.takeactionminnesota.org/work/criminal-justice-reform/";
        vm.educationContent.org2email = "justin@takeactionminnesota.org";
-       vm.educationContent.org2desc = "TakeAction's Justice 4 All (J4A) campaign is focused on removing barriers to employment and Democracy for individuals and families impacted by the just system";
+       vm.educationContent.org2desc = "TakeAction's Justice 4 All (J4A) campaign is focused on removing barriers to employment and Democracy for individuals and families impacted by the justice system.";
       break;
     case "LGBTQ":
       console.log('Logging LGBTQ');
