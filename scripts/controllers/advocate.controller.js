@@ -7,7 +7,7 @@ myApp.controller('AdvController', function($http, $location) {
   // alert('adv controller');
   function sendEmail(address) {
     window.location.href = 'mailto:' + address;
-}
+  }
 
 
 vm.official;
@@ -23,6 +23,8 @@ vm.getReps = function(address) {
   }
   // vm.getReps(address);
 
+  vm.videoURL = 'https://www.youtube.com/watch?v=nHbOUD5aXsc';
+  // https://www.npmjs.com/package/ng-youtube-embed
 
 
   vm.getTopic = function() {
