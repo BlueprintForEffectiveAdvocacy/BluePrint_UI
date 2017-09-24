@@ -1,12 +1,12 @@
 var myApp = angular.module('myApp', ['ngRoute']);
 console.log('myApp sourced');
 /// Routes ///
-myApp.config(function($routeProvider, $locationProvider) {
-  $locationProvider.hashPrefix('');
+myApp.config(function($routeProvider) {
+  // $locationProvider.hashPrefix('');
   $routeProvider
-  .when('/advocate', {
-    templateUrl: '/views/templates/advocate.html',
-    controller: 'AdvocateController as ac'
+  .when('/adv', {
+    templateUrl: '/views/advocate.html',
+    controller: 'AdvController as ac'
   //   resolve: {
   //     getuser : function(UserService){
   //       return UserService.getuser();

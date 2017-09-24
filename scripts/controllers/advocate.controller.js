@@ -1,9 +1,9 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+// var myApp = angular.module('myApp', ['ngRoute']);
 
-myApp.controller('AdvocateController', function($http, $location) {
-  console.log('AdvocateController created');
+myApp.controller('AdvController', function($http, $location) {
+  console.log('AdvController created');
   var vm = this;
 
-
+  alert('adv controller');
 
 }); //end of AdvocateController
