@@ -39,13 +39,35 @@
 </div>
 
 <!-- Choose A Topic -->
-<section class="topicCards container">
-  <div class="">
-    <div class="row">
-      <div align="center">
-        <h1 class="step-one">Step 1. Choose One Topic You Care About</h1>
+
+<section class="container">
+  <div class="row">
+    <div align="center">
+      <h1 class="step-one">Step 1. Choose One Topic You Care About</h1>
+      <div>
+        <div ng-controller="ModalCtrl as mc" class="modal-demo">
+          <script type="text/ng-template" id="myModalContent.html">
+            <div class="modal-header">
+              <h3 class="modal-title" id="modal-title">Why Choose One?</h3>
+            </div>
+            <div class="modal-body" id="modal-body">
+              <p>Choosing one is good and stuff.</p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" type="button" ng-click="mc.ok()">OK</button>
+              <!-- <button class="btn btn-warning" type="button" ng-click="mc.cancel()">Cancel</button> -->
+            </div>
+          </script>
+          <button type="button" class="btn btn-default" ng-click="mc.open()">Why Just One?</button>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+
+
+<section class="topicCards container">
+
     <div align="center">
       <div class="col-md-4">
         <div class="issue" ng-click="ac.educate('Racial Justice')">
@@ -100,16 +122,29 @@
 <section ng-show="ac.getEducated" class="container">
   <div align="center" class="">
     <h1 class="step-one">Step 2. Get Educated. Get Connected.</h1>
-    <div class="educated">
-      <h2 align="left" class="steptwo">Create Justice For... {{}}</h2>
+    <div class="educated" align="left">
+      <h2 align="left" class="steptwo">Create Justice For... {{ac.educationContent.title}}</h2>
       <p align="left" class="whyItMatters"> {{ac.educationContent.summary}}</p>
-      <h3 align="left" class="">Get connected with an email to organizations championing {{}}</h3>
-      <div class="" ng-repeat="org in ac.allOrgs">
-        <p>{{org.name}}</p>
-        <img ng-src="{{org.url}}">
+      <h3 align="left" class="">Get connected with an email to organizations championing {{ac.educationContent.title}}:</h3>
+      <!-- <div class="" ng-repeat="org in ac.allOrgs"> -->
+      <div class="orginization1"> <p align="left"><h4 align="left">{{ac.educationContent.org1}}</h4><br/> {{ac.educationContent.org1desc}}
+        <br/>
+        <a href="{{ac.educationContent.org1website}}">{{ac.educationContent.org1website}}<br/>
+        </p>
+      <a href="mailto:{{vm.educationContent.org1email}}">Send e-mail</a><br/><br/>
       </div>
-      <a href="mailto:{org.email}">Send email</a>
+      <div class="orginization2"><p><h4 align="left">{{ac.educationContent.org2}}</h4>
+        {{ac.educationContent.org2desc}}
+        <br/>
+        <a href="{{ac.educationContent.org2website}}">{{ac.educationContent.org2website}}<br/>
+      </p>
+      <!-- <img ng-src="{{}}"> -->
+      <!-- <a align="left">{{ac.educationContent.org2email}}</p> -->
+    <a href="mailto:{{vm.educationContent.org2email}}">Send e-mail</a>
+      </div>
     </div>
+  </div>
+  </div>
   </div>
 </section>
 <section ng-show="ac.getEducated" class="container">
@@ -149,14 +184,5 @@
         <p>{{rep.emails[0]}}</p>
       </div>
     </div>
-  </div> -->
-  <!-- <h1>Your State Officials</h1>
-  <div ng-repeat="rep in ac.stateOfficials">
-    <div class="col-md-3">
-      <div class="contactRep">
-        <p>{{rep.name}}</p>
-        <p>{{rep.phones[0]}}</p>
-        <p>{{rep.emails[0]}}</p>
-      </div>
-    </div>
-  </div> -->
+  </div>
+</section>
