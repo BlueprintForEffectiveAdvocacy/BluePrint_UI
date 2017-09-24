@@ -1,17 +1,12 @@
+// Basic angular set up, initiate the app
 var myApp = angular.module('myApp', ['ngRoute', 'ngYoutubeEmbed', 'ui.bootstrap']);
 console.log('myApp sourced');
 /// Routes ///
 myApp.config(function($routeProvider) {
-  // $locationProvider.hashPrefix('');
   $routeProvider
   .when('/adv', {
     templateUrl: '/views/advocate.html',
     controller: 'AdvController as ac'
-  //   resolve: {
-  //     getuser : function(UserService){
-  //       return UserService.getuser();
-  //     }
-  //   }
    })
   .otherwise({
     redirectTo: 'adv'

@@ -1,3 +1,4 @@
+<!-- This is the navigation bar and landing splash page -->
 <nav class="navbar">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -13,21 +14,7 @@
 <div class="jumbotron">
   <h1>Empower. Educate. Activate.</h1>
 </div>
-<div class="">
 
-</div>
-<div class="">
-
-</div>
-
-<div class="">
-
-</div>
-
-
-<div class="">
-
-</div>
 
 <!-- Youtube Video 'High Profile' -->
 <div class="container">
@@ -37,12 +24,12 @@
   </div>
 </div>
 
-<!-- Choose A Topic -->
-
+<!-- Choose A Topic Header Section-->
 <section class="container">
   <div class="row">
     <div align="center">
       <h1 class="step-one">Step 1. Choose One Issue You Care About</h1>
+      <!-- Modal Pop Up Section -->
       <div>
         <div ng-controller="ModalCtrl as mc" class="modal-demo">
           <script type="text/ng-template" id="myModalContent.html">
@@ -54,7 +41,6 @@
             </div>
             <div class="modal-footer">
               <button class="btn btn-primary" type="button" ng-click="mc.ok()">OK</button>
-              <!-- <button class="btn btn-warning" type="button" ng-click="mc.cancel()">Cancel</button> -->
             </div>
           </script>
           <button type="button" class="btn btn-default" ng-click="mc.open()">Why Just One?</button>
@@ -64,9 +50,8 @@
   </div>
   </div>
 
-
+<!-- Currently Hardcoded tile cards for issue of concern  -->
   <section class="topicCards container">
-
     <div align="center">
       <div class="col-md-4">
         <div class="issue" ng-click="ac.educate('Racial Justice')">
@@ -116,9 +101,9 @@
     </div>
     </div>
   </section>
-  
-  <!-- Get Involved -->
 
+
+  <!-- Get Involved inludes issue summary and organizations to join up with-->
   <section ng-show="ac.getEducated" class="container" style="color: black;">
     <div align="center" style="border-radius: 7px; padding: 20px;">
       <h1 class="step-one">Step 2. Get Educated. Get Connected.</h1>
@@ -126,11 +111,9 @@
         <h2 align="left" class="steptwo">Create Justice For... {{ac.educationContent.title}}</h2>
         <p align="left" class="whyItMatters" style="padding: 8px;"> {{ac.educationContent.summary}}</p>
         <h3 align="left" style="padding: 8px;">Get connected with an email to organizations championing {{ac.educationContent.title}}:</h3>
-
         <div class="row">
         <div class="col-md-3" style="padding: 40px;"><img src="pictures/jewishcommunityaction.png" style="max-height: 100%; max-width: 100%;"></div>
         <div class="col-md-9">
-
           <div class="orginization1" style="padding: 20px;">
             <p align="left" style="font-size: 19px;">
               <h4 align="left">{{ac.educationContent.org1}}</h4>
@@ -141,11 +124,9 @@
               </p>
           </div>
         </div>
-
         <div class="row">
           <div class="col-md-3" style="padding:40px;"><img src="pictures/takeactionminnesota.png" style="max-height: 100%; max-width: 100%;"></div>
           <div class="col-md-9">
-
             <div class="orginization2" style="padding: 20px;">
               <p style=" font-size: 19px;">
                 <h4 align="left">{{ac.educationContent.org2}}</h4>
@@ -161,6 +142,8 @@
     </div>
     </div>
   </section>
+
+  <!-- Take Action: Input Home Address and output local rep list -->
   <section ng-show="ac.getEducated" class="container">
       <div align="center">
         <h1 class="step-one">Step 3. Take Action. Get Involved.</h1>
@@ -168,8 +151,7 @@
         <button class="addressBtn col-md-2" type="button" ng-click="ac.getReps(address)">Submit</button>
         <label>Enter Your Home Address to Get a List of Your Representatives</label>
       </div>
-      <!-- <input class="col-md-10" placeholder="Enter Your Address to Find Your Representatives" type="text" ng-model="address">
-      <button class="col-md-2" type="button" ng-click="ac.getReps(address)">Submit</button> -->
+<!-- List of Federal officals -->
       <h1 ng-show="ac.showReps" class="col-md-12">Your Federal Officials</h1>
         <div ng-repeat="rep in ac.federalOfficials">
           <div class="col-md-4">
@@ -180,6 +162,7 @@
             </div>
           </div>
         </div>
+<!-- List of State and Local officals -->
         <h1 ng-show="ac.showReps" class="col-md-12">Your State Officials</h1>
         <div ng-repeat="rep in ac.stateOfficials">
           <div class="col-md-4">
@@ -196,19 +179,8 @@
 
 
 
-<!--
-<h1>Your Federal Officials</h1>
-  <div ng-repeat="rep in ac.federalOfficials">
-    <div class="col-md-3">
-      <div class="contactRep">
-        <p>{{rep.name}}</p>
-        <p>{{rep.phones[0]}}</p>
-        <p>{{rep.emails[0]}}</p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Everything below here is just a place holder for now -->
+
+<!-- Placeholder section for links and tutorials for Power Network info -->
 <section class="container">
   <div class="row">
     <div class="slides">

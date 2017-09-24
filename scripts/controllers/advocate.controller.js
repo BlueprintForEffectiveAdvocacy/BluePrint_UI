@@ -2,19 +2,17 @@ myApp.controller('AdvController', function($http, $location) {
   console.log('AdvController created');
   var vm = this;
 
-  // alert('adv controller');
-  function sendEmail(address) {
-    window.location.href = 'mailto:' + address;
-  }
-
-  // http://www.chaosm.net/blog/2014/05/21/angularjs-contact-form-with-bootstrap-and-phpmailer/
-  // this could be useful for emailing from the webpage instead of using a mail app
-
+// Boolean values are for showing only one step of the process at a time (toggle functions)
 vm.getEducated = false;
 vm.showReps = false;
-
+vm.videoURL = 'https://www.youtube.com/watch?v=nHbOUD5aXsc';
+// https://www.npmjs.com/package/ng-youtube-embed
 vm.educationContent = {};
 
+
+// The educate function is currently a switch statement that displays organizatoin information
+//based on the issue our user selects.
+//this is hardcoded, and will need to be refactored to make AJAX request and return the right topic info
 vm.educate = function(topic) {
   vm.getEducated = !vm.getEducated;
   // vm.select = function (topic) {
@@ -77,7 +75,9 @@ vm.educate = function(topic) {
 
 
 
-
+// This function calls to the Google Civic API
+//Then several for loops help pull out only members of congress and state legislature,
+//looping through pulls only officals users can and would want to contact direcly (not the Pres of USA)
 vm.federalOffices = ["United States Senate", "United States House of Representatives"];
 vm.stateOffices = ["Governor", "State Senate", "State House"];
 vm.getReps = function(address) {
@@ -111,10 +111,14 @@ vm.getReps = function(address) {
     });
   }
 
-  vm.videoURL = 'https://www.youtube.com/watch?v=nHbOUD5aXsc';
-  // https://www.npmjs.com/package/ng-youtube-embed
 
 
+  // for mailto function on email addresses
+  function sendEmail(address) {
+    window.location.href = 'mailto:' + address;
+  }
+
+// an API call to pull all issues from the server, (just update the url and the json data will be returned)
   vm.getTopic = function() {
       $http.get('http://172.16.254.125:8000/issues/?format=json').then(function(response) {
         console.log('get Issue called');
