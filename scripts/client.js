@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute', 'ngYoutubeEmbed']);
 console.log('myApp sourced');
 /// Routes ///
 myApp.config(function($routeProvider) {
