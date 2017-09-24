@@ -8,6 +8,7 @@ myApp.controller('AdvController', function($http, $location) {
   }
 
 vm.getEducated = false;
+vm.showReps = false;
 
 vm.educationContent = {};
 
@@ -71,18 +72,41 @@ vm.educate = function(topic) {
 };
 
 
-// }
 
 
+
+vm.federalOffices = ["United States Senate", "United States House of Representatives"];
+vm.stateOffices = ["Governor", "State Senate", "State House"];
 vm.getReps = function(address) {
+    vm.showReps = !vm.showReps;
     $http.get('https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyBlOIeTeyReDkPTNQEL-rt_xe634WuRKSE&address='+encodeURIComponent(address)).then(function(response) {
+      vm.stateOfficials = [];
+      vm.federalOfficials = [];
       console.log('get reps called');
       console.log('offical ', response.data);
-      vm.rep = response.data.officials;
-      console.log("vm.rep", vm.rep);
+      for (i = 0; i < vm.federalOffices.length; i++) {
+        for (_i = 0; _i < response.data.offices.length; _i++) {
+          if(response.data.offices[_i].name.includes(vm.federalOffices[i])) {
+            for (e = 0; e < response.data.offices[_i].officialIndices.length; e++) {
+              vm.federalOfficials.push(response.data.officials[response.data.offices[_i].officialIndices[e]]);
+            }
+          }
+        }
+      }
+      for (i = 0; i < vm.stateOffices.length; i++) {
+        for (_i = 0; _i < response.data.offices.length; _i++) {
+          if(response.data.offices[_i].name.includes(vm.stateOffices[i])) {
+            if(vm.stateOffices[i] == "Governor" && response.data.offices[_i].name != "Governor") {
+              continue;
+            }
+            for (e = 0; e < response.data.offices[_i].officialIndices.length; e++) {
+              vm.stateOfficials.push(response.data.officials[response.data.offices[_i].officialIndices[e]])
+            }
+          }
+        }
+      }
     });
   }
-  // vm.getReps(address);
 
   vm.videoURL = 'https://www.youtube.com/watch?v=nHbOUD5aXsc';
   // https://www.npmjs.com/package/ng-youtube-embed

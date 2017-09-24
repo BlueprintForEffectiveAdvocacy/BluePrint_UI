@@ -133,7 +133,7 @@
         </p>
       <a href="mailto:{{vm.educationContent.org1email}}">Send e-mail</a><br/><br/>
       </div>
-      <div class="orginization2"><p><h4 align="left">{{ac.educationContent.org2}}</h4> 
+      <div class="orginization2"><p><h4 align="left">{{ac.educationContent.org2}}</h4>
         {{ac.educationContent.org2desc}}
         <br/>
         <a href="{{ac.educationContent.org2website}}">{{ac.educationContent.org2website}}<br/>
@@ -148,9 +148,35 @@
   </div>
 </section>
 <section ng-show="ac.getEducated" class="container">
-  <input type="text" ng-model="address">
-  <button type="button" ng-click="ac.getReps(address)">Submit</button>
-  <div ng-repeat="rep in ac.rep">
+  <input class="col-md-10" placeholder="Enter Your Address to Find Your Representatives" type="text" ng-model="address">
+  <button class="col-md-2" type="button" ng-click="ac.getReps(address)">Submit</button>
+  <h1 ng-show="ac.showReps" class="col-md-12">Your Federal Officials</h1>
+    <div ng-repeat="rep in ac.federalOfficials">
+      <div class="col-md-3">
+        <div class="contactRep">
+          <p>{{rep.name}}</p>
+          <p>{{rep.phones[0]}}</p>
+          <p>{{rep.emails[0]  || rep.urls[0] }}</p>
+        </div>
+      </div>
+    </div>
+    <h1 ng-show="ac.showReps" class="col-md-12">Your State Officials</h1>
+    <div ng-repeat="rep in ac.stateOfficials">
+      <div class="col-md-3">
+        <div class="contactRep">
+          <p>{{rep.name}}</p>
+          <p>{{rep.phones[0]}}</p>
+          <p>{{rep.emails[0] || rep.urls[0] }}</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+
+<!--
+<h1>Your Federal Officials</h1>
+  <div ng-repeat="rep in ac.federalOfficials">
     <div class="col-md-3">
       <div class="contactRep">
         <p>{{rep.name}}</p>
