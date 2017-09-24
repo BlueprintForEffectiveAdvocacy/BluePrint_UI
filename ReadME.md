@@ -16,7 +16,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-In Terminal, git clone this repository. Then, use a php server to serve the files.
+In Terminal, git clone this repository. Navigate to the root of the file (go into the project folder), use a php server to serve the files.
 
 ```
 $ php -S localhost:5000
