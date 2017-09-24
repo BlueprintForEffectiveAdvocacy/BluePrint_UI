@@ -39,13 +39,35 @@
 </div>
 
 <!-- Choose A Topic -->
-<section class="topicCards container">
-  <div class="">
-    <div class="row">
-      <div align="center">
-        <h1 class="step-one">Step 1. Choose One Topic You Care About</h1>
+
+<section class="container">
+  <div class="row">
+    <div align="center">
+      <h1 class="step-one">Step 1. Choose One Topic You Care About</h1>
+      <div>
+        <div ng-controller="ModalCtrl as mc" class="modal-demo">
+          <script type="text/ng-template" id="myModalContent.html">
+            <div class="modal-header">
+              <h3 class="modal-title" id="modal-title">Why Choose One?</h3>
+            </div>
+            <div class="modal-body" id="modal-body">
+              <p>Choosing one is good and stuff.</p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" type="button" ng-click="mc.ok()">OK</button>
+              <!-- <button class="btn btn-warning" type="button" ng-click="mc.cancel()">Cancel</button> -->
+            </div>
+          </script>
+          <button type="button" class="btn btn-default" ng-click="mc.open()">Why Just One?</button>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+
+
+<section class="topicCards container">
+
     <div align="center">
       <div class="col-md-4">
         <div class="issue" ng-click="ac.educate('Racial Justice')">
