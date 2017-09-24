@@ -39,6 +39,7 @@
 </div>
 
 <!-- Choose A Topic -->
+
 <section class="container">
   <div class="row">
     <div align="center">
@@ -57,28 +58,7 @@
               <!-- <button class="btn btn-warning" type="button" ng-click="mc.cancel()">Cancel</button> -->
             </div>
           </script>
-          <!-- <script type="text/ng-template" id="stackedModal.html">
-            <div class="modal-header">
-              <h3 class="modal-title" id="modal-title-{{name}}">The {{name}} modal!</h3>
-            </div>
-            <div class="modal-body" id="modal-body-{{name}}">
-              Having multiple modals open at once is probably bad UX but it's technically possible.
-            </div>
-          </script> -->
-
           <button type="button" class="btn btn-default" ng-click="mc.open()">Why Just One?</button>
-          <!-- <button type="button" class="btn btn-default" ng-click="mc.open('lg')">Large modal</button>
-          <button type="button" class="btn btn-default" ng-click="mc.open('sm')">Small modal</button>
-          <button type="button" class="btn btn-default" ng-click="mc.open('sm', '.modal-parent')">
-            Modal appended to a custom parent
-    </button>
-          <button type="button" class="btn btn-default" ng-click="mc.toggleAnimation()">Toggle Animation ({{ mc.animationsEnabled }})</button>
-          <button type="button" class="btn btn-default" ng-click="mc.openComponentModal()">Open a component modal!</button>
-          <button type="button" class="btn btn-default" ng-click="mc.openMultipleModals()">
-        Open multiple modals at once 
-    </button> -->
-          <!-- <div ng-show="mc.selected">Selection from a modal: {{ mc.selected }}</div>
-          <div class="modal-parent"> -->
           </div>
         </div>
       </div>
@@ -88,72 +68,91 @@
     <div class="col-md-4">
       <div class="issue">
         <p class="text-center">Racial Justice</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="issue">
-        <p class="text-center">Criminal Justice Reform</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="issue">
-        <p class="text-center">LGBTQ</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="issue">
-        <p class="text-center">Reproductive Rights</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="issue">
-        <p class="text-center">Healthcare</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="issue">
-        <p class="text-center">Education</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="issue">
-        <p class="text-center">Worker's Rights/Equal Pay</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="issue">
-        <p class="text-center">Immigration Rights</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="issue">
-        <p class="text-center">Climate Change and Environment</p>
-      </div>
-    </div>
 
+<section class="topicCards container">
+  <div class="">
+    <div class="row">
+      <div align="center">
+        <h1 class="step-one">Step 1. Choose One Topic You Care About</h1>
+
+      </div>
+    </div>
+    <div align="center">
+      <div class="col-md-4">
+        <div class="issue" ng-click="ac.educate('Racial Justice')">
+          <p class="text-center">Racial Justice</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="issue" ng-click="ac.educate('Criminal Justice Reform')">
+          <p class="text-center">Criminal Justice Reform</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="issue" ng-click="ac.educate('LGBTQ')">
+          <p class="text-center">LGBTQ</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="issue" ng-click="ac.educate('Reproductive Rights')">
+          <p class="text-center">Reproductive Rights</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="issue" ng-click="ac.educate('Healthcare')">
+          <p class="text-center">Healthcare</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="issue" ng-click="ac.educate('Education')">
+          <p class="text-center">Education</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="issue" ng-click="ac.educate('Workers Right/Equal Pay')">
+          <p class="text-center">Worker's Rights/Equal Pay</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="issue" ng-click="ac.educate('Immigration Rights')">
+          <p class="text-center">Immigration Rights</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="issue" ng-click="ac.educate('Climate Change and Environment')">
+          <p class="text-center">Climate Change and Environment</p>
+        </div>
+      </div>
+
+    </div>
   </div>
-
 </section>
 <!-- Get Involved -->
-<section class="container">
-<div align="center" class="">
-  <h1 class="step-one">Step 2. Get Educated. Get Connected.</h1>
-  <div class="educated">
+<section ng-show="ac.getEducated" class="container">
+  <div align="center" class="">
+    <h1 class="step-one">Step 2. Get Educated. Get Connected.</h1>
+    <div class="educated">
       <h2 align="left" class="steptwo">Create Justice For... {{}}</h2>
-      <p align="left" class="whyItMatters">This is a sentence about why this matters {{}}</p>
-    <h3 align="left" class="">Get connected with an email to organizations championing {{}}</h3>
-    <div class="" ng-repeat="org in ac.allOrgs">
-      <p>{{org.name}}</p>
-      <img ng-src="{{org.url}}">
+      <p align="left" class="whyItMatters"> {{ac.educationContent.summary}}</p>
+      <h3 align="left" class="">Get connected with an email to organizations championing {{}}</h3>
+      <div class="" ng-repeat="org in ac.allOrgs">
+        <p>{{org.name}}</p>
+        <img ng-src="{{org.url}}">
+      </div>
+      <a href="mailto:{org.email}">Send email</a>
     </div>
-    <a href="mailto:{org.email}">Send email</a>
   </div>
-</div>
 </section>
-<section  class="container">
+<section ng-show="ac.getEducated" class="container">
   <input type="text" ng-model="address">
   <button type="button" ng-click="ac.getReps(address)">Submit</button>
-  <div ng-repeat="rep in ac.offical">
-    <p>{{rep.name}}</p>
+  <div ng-repeat="rep in ac.rep">
+    <div class="col-md-3">
+      <div class="contactRep">
+        <p>{{rep.name}}</p>
+        <p>{{rep.phones[0]}}</p>
+        <p>{{rep.emails[0]}}</p>
+      </div>
+    </div>
   </div>
 </section>
