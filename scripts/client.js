@@ -14,10 +14,10 @@ myApp.config(function($routeProvider) {
   //   }
    })
   .otherwise({
-    redirectTo: 'home'
+    redirectTo: 'adv'
   });
-});
 
-
-
-  //end of info controller
+  function sendEmail(address) {
+    window.location.href = 'mailto:' + address;
+}
+});//end of info controller
