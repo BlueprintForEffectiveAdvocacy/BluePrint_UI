@@ -4,10 +4,9 @@
       <a class="navbar-brand" href="#">Blueprint For Effective Advocacy</a>
     </div>
     <ul class="nav navbar-nav" id="nav-menu-list">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
+      <li><a href="https://www.blueprintcampaigns.org/">Blueprint Campaigns</a></li>
+      <li><a href="#">Sign Up</a></li>
+      <li><a href="#">Login</a></li>
     </ul>
   </div>
 </nav>
@@ -59,14 +58,14 @@
             </div>
           </script>
           <button type="button" class="btn btn-default" ng-click="mc.open()">Why Just One?</button>
-          </div>
         </div>
       </div>
     </div>
   </div>
+  </div>
 
 
-<section class="topicCards container">
+  <section class="topicCards container">
 
     <div align="center">
       <div class="col-md-4">
@@ -114,63 +113,86 @@
           <p class="text-center">Climate Change and Environment</p>
         </div>
       </div>
+    </div>
+    </div>
+  </section>
+  
+  <!-- Get Involved -->
 
-    </div>
-  </div>
-</section>
-<!-- Get Involved -->
-<section ng-show="ac.getEducated" class="container">
-  <div align="center" class="">
-    <h1 class="step-one">Step 2. Get Educated. Get Connected.</h1>
-    <div class="educated" align="left">
-      <h2 align="left" class="steptwo">Create Justice For... {{ac.educationContent.title}}</h2>
-      <p align="left" class="whyItMatters"> {{ac.educationContent.summary}}</p>
-      <h3 align="left" class="">Get connected with an email to organizations championing {{ac.educationContent.title}}:</h3>
-      <!-- <div class="" ng-repeat="org in ac.allOrgs"> -->
-      <div class="orginization1"> <p align="left"><h4 align="left">{{ac.educationContent.org1}}</h4><br/> {{ac.educationContent.org1desc}}
-        <br/>
-        <a href="{{ac.educationContent.org1website}}">{{ac.educationContent.org1website}}<br/>
-        </p>
-      <a href="mailto:{{vm.educationContent.org1email}}">Send e-mail</a><br/><br/>
-      </div>
-      <div class="orginization2"><p><h4 align="left">{{ac.educationContent.org2}}</h4>
-        {{ac.educationContent.org2desc}}
-        <br/>
-        <a href="{{ac.educationContent.org2website}}">{{ac.educationContent.org2website}}<br/>
-      </p>
-      <!-- <img ng-src="{{}}"> -->
-      <!-- <a align="left">{{ac.educationContent.org2email}}</p> -->
-    <a href="mailto:{{vm.educationContent.org2email}}">Send e-mail</a>
-      </div>
-    </div>
-  </div>
-  </div>
-  </div>
-</section>
-<section ng-show="ac.getEducated" class="container">
-  <input class="col-md-10" placeholder="Enter Your Address to Find Your Representatives" type="text" ng-model="address">
-  <button class="col-md-2" type="button" ng-click="ac.getReps(address)">Submit</button>
-  <h1 ng-show="ac.showReps" class="col-md-12">Your Federal Officials</h1>
-    <div ng-repeat="rep in ac.federalOfficials">
-      <div class="col-md-3">
-        <div class="contactRep">
-          <p>{{rep.name}}</p>
-          <p>{{rep.phones[0]}}</p>
-          <p>{{rep.emails[0]  || rep.urls[0] }}</p>
+  <section ng-show="ac.getEducated" class="container" style="color: black;">
+    <div align="center" style="border-radius: 7px; padding: 20px;">
+      <h1 class="step-one">Step 2. Get Educated. Get Connected.</h1>
+      <div class="educated" align="left">
+        <h2 align="left" class="steptwo">Create Justice For... {{ac.educationContent.title}}</h2>
+        <p align="left" class="whyItMatters" style="padding: 8px;"> {{ac.educationContent.summary}}</p>
+        <h3 align="left" style="padding: 8px;">Get connected with an email to organizations championing {{ac.educationContent.title}}:</h3>
+
+        <div class="row">
+        <div class="col-md-3" style="padding: 40px;"><img src="pictures/jewishcommunityaction.png" style="max-height: 100%; max-width: 100%;"></div>
+        <div class="col-md-9">
+
+          <div class="orginization1" style="padding: 20px;">
+            <p align="left" style="font-size: 19px;">
+              <h4 align="left">{{ac.educationContent.org1}}</h4>
+              <h5>{{ac.educationContent.org1desc}}</h5>
+              <br/>
+              <a href="{{ac.educationContent.org1website}}" style="text-decoration: none; font-size: 15px;">{{ac.educationContent.org1website}}<br/>
+              <a href="mailto:{{ac.educationContent.org1email}}" style="text-decoration: none; font-size: 15px;">{{ac.educationContent.org1email}}</a><br/><br/>
+              </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3" style="padding:40px;"><img src="pictures/takeactionminnesota.png" style="max-height: 100%; max-width: 100%;"></div>
+          <div class="col-md-9">
+
+            <div class="orginization2" style="padding: 20px;">
+              <p style=" font-size: 19px;">
+                <h4 align="left">{{ac.educationContent.org2}}</h4>
+                <h5>{{ac.educationContent.org2desc}}</h5><br/>
+                <a href="{{ac.educationContent.org2website}}" style="text-decoration: none; font-size: 15px;">{{ac.educationContent.org2website}}<br/>
+                <a href="mailto:{{ac.educationContent.org2email}}" style="text-decoration: none; font-size: 15px;">{{ac.educationContent.org2email}}</a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <h1 ng-show="ac.showReps" class="col-md-12">Your State Officials</h1>
-    <div ng-repeat="rep in ac.stateOfficials">
-      <div class="col-md-3">
-        <div class="contactRep">
-          <p>{{rep.name}}</p>
-          <p>{{rep.phones[0]}}</p>
-          <p>{{rep.emails[0] || rep.urls[0] }}</p>
-        </div>
-      </div>
     </div>
-</section>
+    </div>
+  </section>
+  <section ng-show="ac.getEducated" class="container">
+      <div align="center">
+        <h1 class="step-one">Step 3. Take Action. Get Involved.</h1>
+        <input class="col-md-10" type="text" ng-model="address">
+        <button class="addressBtn col-md-2" type="button" ng-click="ac.getReps(address)">Submit</button>
+        <label>Enter Your Home Address to Get a List of Your Representatives</label>
+      </div>
+      <!-- <input class="col-md-10" placeholder="Enter Your Address to Find Your Representatives" type="text" ng-model="address">
+      <button class="col-md-2" type="button" ng-click="ac.getReps(address)">Submit</button> -->
+      <h1 ng-show="ac.showReps" class="col-md-12">Your Federal Officials</h1>
+        <div ng-repeat="rep in ac.federalOfficials">
+          <div class="col-md-4">
+            <div class="contactRep">
+              <p class="rep">{{rep.name}}</p>
+              <p class="rep">{{rep.phones[0]}}</p>
+              <p class="rep">{{rep.emails[0]  || rep.urls[0] }}</p>
+            </div>
+          </div>
+        </div>
+        <h1 ng-show="ac.showReps" class="col-md-12">Your State Officials</h1>
+        <div ng-repeat="rep in ac.stateOfficials">
+          <div class="col-md-4">
+            <div class="contactRep">
+              <p class="rep">{{rep.name}}</p>
+              <p class="rep">{{rep.phones[0]}}</p>
+              <p class="rep"><a href="mailto:{{rep.emails[0]}}">{{rep.emails[0]}}</a></p>
+              <p ng-if="{{rep.emails[0]}} == null"class="rep">{{rep.urls[0]}}</p>
+            </div>
+          </div>
+        </div>
+    </section>
+
 
 
 

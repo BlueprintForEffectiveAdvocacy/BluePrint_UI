@@ -127,6 +127,8 @@ html, body {
 
 .educated {
   background-color: #35A7FF;
+  border-radius: 10px; 
+  padding: 20px;
 }
 
 .steptwo {
