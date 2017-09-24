@@ -110,7 +110,11 @@ html, body {
 
 
 
-
+.contactRep {
+  background-color: #35A7FF;
+  margin-top: 10px;
+  min-height: 100px;
+}
 
 
 
@@ -130,7 +134,9 @@ html, body {
 
 }
 
-
+p {
+  color: black;
+}
 
 .issue:hover {
   margin-top: 10px;
