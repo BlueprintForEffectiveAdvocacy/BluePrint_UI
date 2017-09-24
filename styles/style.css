@@ -1,3 +1,7 @@
+html, body {
+  font-family: 'Old Standard TT', serif;
+}
+
 
 .navbar{
     border: none;
@@ -52,6 +56,9 @@
 }
 
 
+.step-one {
+  font-size: 48px;
+}
 
 
 
@@ -119,17 +126,20 @@
 
 
 
-
-
+.issue:hover {
+  margin-top: 10px;
+  height: 150px;
+  color: white;
+  background-color: navy;
+}
 
 
 
 
 .issue {
-  border-radius: 10px;
+  margin-top: 10px;
   height: 150px;
   background-color: #35A7FF;
-  border: 2px solid #424C55;
 }
 
 .text-center {
