@@ -61,6 +61,28 @@ html, body {
   font-size: 48px;
 }
 
+.btn-circle {
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    padding: 0 3px 15px;
+    font-size: 12px;
+    line-height: 1.42;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    border-width: 2px;
+    font-weight: bold;
+  }
+
+#why-just-one{
+    background: none;
+    box-shadow: none;
+    font-style: bold;
+    color: #FD9B9B;
+    border-color: #FD9B9B;
+}
+
 
 
 

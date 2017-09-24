@@ -43,9 +43,8 @@
 <section class="container">
   <div class="row">
     <div align="center">
-      <h1 class="step-one">Step 1. Choose One Topic You Care About</h1>
-      <div>
-        <div ng-controller="ModalCtrl as mc" class="modal-demo">
+      <div ng-controller="ModalCtrl as mc" class="modal-demo">
+        <h1 class="step-one">Step 1. Choose One Topic You Care About<button type="button" id="why-just-one" class="btn btn-default btn-circle" ng-click="mc.open()">?</button></h1>
           <script type="text/ng-template" id="myModalContent.html">
             <div class="modal-header">
               <h3 class="modal-title" id="modal-title">Why Choose One?</h3>
@@ -58,7 +57,7 @@
               <!-- <button class="btn btn-warning" type="button" ng-click="mc.cancel()">Cancel</button> -->
             </div>
           </script>
-          <button type="button" class="btn btn-default" ng-click="mc.open()">Why Just One?</button>
+
           </div>
         </div>
       </div>
