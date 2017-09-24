@@ -7,6 +7,9 @@ myApp.controller('AdvController', function($http, $location) {
     window.location.href = 'mailto:' + address;
   }
 
+  // http://www.chaosm.net/blog/2014/05/21/angularjs-contact-form-with-bootstrap-and-phpmailer/
+  // this could be useful for emailing from the webpage instead of using a mail app
+
 vm.getEducated = false;
 vm.showReps = false;
 
