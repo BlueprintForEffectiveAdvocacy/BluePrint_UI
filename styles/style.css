@@ -61,7 +61,10 @@ html, body {
   font-size: 48px;
 }
 
-
+.slides {
+  margin: auto;
+  width: 85%;
+}
 
 
 
